@@ -11,7 +11,11 @@ import android.view.MenuItem;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class FindBeerActivity extends AppCompatActivity {
+
+    private BeerExpert mBeerExpert = new BeerExpert();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +34,14 @@ public class FindBeerActivity extends AppCompatActivity {
         //type of beer, Object->String
         String sColorName = String.valueOf(color.getSelectedItem());
 
+        List<String> sBrandsList = mBeerExpert.getBrands(sColorName);
+
+        StringBuilder brandsFormatted = new StringBuilder();
+        for(String brand : sBrandsList){
+            brandsFormatted.append(brand).append("\n");
+        }
         //show result
-        brands.setText(sColorName);
+        brands.setText(brandsFormatted);
 
     }
 
