@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class FindBeerActivity extends AppCompatActivity {
 
@@ -17,6 +19,19 @@ public class FindBeerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find_beer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+    }
+
+    public void onClickFindBeer(View view){
+
+        TextView brands = (TextView) findViewById(R.id.brands);
+        Spinner color = (Spinner) findViewById(R.id.color);
+
+        //type of beer, Object->String
+        String sColorName = String.valueOf(color.getSelectedItem());
+
+        //show result
+        brands.setText(sColorName);
 
     }
 
