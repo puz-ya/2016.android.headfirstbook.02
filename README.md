@@ -1,7 +1,5 @@
-# 2016.android.headfirstbook.02
+# Chapter 02. Actions.
 
-Name: BeerExpert.
-
-Find beer name by it type in Spinner.
+BeerExpert. Find beer name by it type in Spinner. Activity, Layout, xml, OnClick.
 
 After pressing the button - set text in TextView.
